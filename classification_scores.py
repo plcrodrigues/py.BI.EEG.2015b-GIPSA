@@ -68,3 +68,16 @@ for pair in dataset.pair_list:
 
 filename = 'classification_scores.pkl'
 joblib.dump(scores, filename)    
+
+with open('classification_scores.txt', 'w') as the_file:
+    for pair in scores.keys():
+        the_file.write('pair ' + str(pair).zfill(2) + ', session 1, subject 1 : ' + '{:.2f}'.format(scores[pair]['s1'][1]) + '\n')
+        the_file.write('pair ' + str(pair).zfill(2) + ', session 1, subject 2 : ' + '{:.2f}'.format(scores[pair]['s1'][2]) + '\n')
+        the_file.write('pair ' + str(pair).zfill(2) + ', session 2, subject 1 : ' + '{:.2f}'.format(scores[pair]['s2'][1]) + '\n')
+        the_file.write('pair ' + str(pair).zfill(2) + ', session 2, subject 2 : ' + '{:.2f}'.format(scores[pair]['s2'][2]) + '\n')
+        the_file.write('pair ' + str(pair).zfill(2) + ', session 3, subject 1 : ' + '{:.2f}'.format(scores[pair]['s3'][1]) + '\n')
+        the_file.write('pair ' + str(pair).zfill(2) + ', session 3, subject 2 : ' + '{:.2f}'.format(scores[pair]['s3'][2]) + '\n')
+        the_file.write('pair ' + str(pair).zfill(2) + ', session 4, subject 1 : ' + '{:.2f}'.format(scores[pair]['s4'][1]) + '\n')
+        the_file.write('pair ' + str(pair).zfill(2) + ', session 4, subject 2 : ' + '{:.2f}'.format(scores[pair]['s4'][2]) + '\n')
+
+
